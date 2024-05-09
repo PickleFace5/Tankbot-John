@@ -43,6 +43,7 @@ class RobotContainer:
         self.auto_chooser = SendableChooser()
         self.auto_chooser.setDefaultOption("Do Nothing", None)
         self.auto_chooser.addOption("Through And Through", PathPlannerAuto("ThroughAndThrough"))
+        self.auto_chooser.addOption("Circle", PathPlannerAuto("Circle"))
         
         # Show Auto Chooser on the Dashboard
         Shuffleboard.getTab("Main").add("Auto Chooser", self.auto_chooser).withWidget(BuiltInWidgets.kComboBoxChooser)
