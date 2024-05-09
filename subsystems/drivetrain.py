@@ -109,18 +109,18 @@ class Drivetrain(Subsystem):
     # If we're in simulation, then we have to set the simulated robot angle to 0
     gyro_sim = 0
     
+    # Since we've already setup everything, we have to create the widgets for Elastic
+    # Now, I'm going to use the ShuffleBoard API, so this is new stuff. We'll work on this more later into the offseason,
+    
+    # Creating the field widget
+    field = Field2d()
+    
+    # Sending Widgets to dashboard
+    Shuffleboard.getTab("Main").add("Field", field).withWidget(BuiltInWidgets.kField)
+    
     
     def __init__(self) -> None:
         # Aaaaaand we're finally to the init! Woooooo!
-        
-        # Since we've already setup everything, we have to create the widgets for Elastic
-        # Now, I'm going to use the ShuffleBoard API, so this is new stuff. We'll work on this more later into the offseason,
-        
-        # Creating the field widget
-        self.field = Field2d()
-        
-        # Sending Widgets to dashboard
-        Shuffleboard.getTab("Main").add("Field", self.field).withWidget(BuiltInWidgets.kField)
         
         # Configuring settings for PathPlanner
         AutoBuilder.configureRamsete(
